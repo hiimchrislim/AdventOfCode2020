@@ -12,9 +12,7 @@ def threeSumProduct(input: str, targetSum: int):
         while left < right:
             currentSum = arr[i] + arr[left] + arr[right]
             if currentSum == targetSum:
-                tripletSum = arr[i] * arr[left] * arr[right]
-                left += 1
-                right -= 1
+                return arr[i] * arr[left] * arr[right]
             elif currentSum < targetSum:
                 left += 1
             else:
