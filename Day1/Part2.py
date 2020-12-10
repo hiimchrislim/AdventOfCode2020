@@ -1,6 +1,6 @@
-# Returns the product of the three sum pair that sums to the targetSum (in this case 2020)
-def threeSumProduct(input: str, targetSum: int):
-    tripletSum = 0
+# Returns the product of the three sum pair that sums to the target_sum (in this case 2020)
+def three_sum_product(input: str, target_sum: int):
+    triplet_sum = 0
     arr = []
     for num in input.split("\n"):
         if num != "":
@@ -10,16 +10,16 @@ def threeSumProduct(input: str, targetSum: int):
         left = i + 1
         right = len(arr) - 1
         while left < right:
-            currentSum = arr[i] + arr[left] + arr[right]
-            if currentSum == targetSum:
+            current_sum = arr[i] + arr[left] + arr[right]
+            if current_sum == target_sum:
                 return arr[i] * arr[left] * arr[right]
-            elif currentSum < targetSum:
+            elif current_sum < target_sum:
                 left += 1
             else:
                 right -= 1
-    return tripletSum
+    return triplet_sum
 
 
 if __name__ == '__main__':
     with open("input.txt") as input:
-        print(threeSumProduct(input.read(), 2020))
+        print(three_sum_product(input.read(), 2020))
